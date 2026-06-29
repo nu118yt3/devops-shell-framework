@@ -1,0 +1,27 @@
+name: CI DevOps Shell Framework
+
+on:
+  push:
+   branches:["main","master"]
+  pull_request:
+
+jobs:
+ validate:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checkout
+     uses: actions/checkout@v4
+
+   - name: Validar scripts shell
+     run: |
+      bash -n app/app.sh
+      bash -n scripts/validate.sh
+
+   - name: Generar HTML
+     run: |
+      ./app/app.sh
+      test -f app/index.html
+
+   - name: Construir imagen Docker
+     run: |
+      docker build -t devops-shell-framework:ci -f docker/Dockerfile .
