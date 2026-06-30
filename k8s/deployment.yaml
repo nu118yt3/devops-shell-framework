@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-shell-framework
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-shell-framework
+  template:
+    metadata:
+      labels:
+        app: devops-shell-framework
+    spec:
+      containers:
+        - name: web
+          image: devops-shell-framework:v1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
