@@ -23,5 +23,5 @@ for file in "${required_files[@]}";do
 
 echo "[INFO] Validando sintaxis shell..."
 bash -n app/app.sh
-bash -n script/install-tools.sh
+bash -n scripts/install-tools.sh
 echo "[OK] Validación completada"
