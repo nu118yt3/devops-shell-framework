@@ -1,0 +1,25 @@
+---
+- name: Configuracion local para practica DevOps
+  hosts: local
+  become: true
+  tasks:
+    - name: Instalar paquetes base
+      apt:
+        name:
+          - curl
+          - git
+          - nginx
+        state: present
+        update_cache: true
+
+    - name: Crear carpeta de publicacion demo
+      file:
+        path: /opt/devops-shell-framework
+        state: directory
+        mode: '0755'
+
+    - name: Copiar pagina generada por shell
+      copy:
+        src: ../app/index.html
+        dest: /opt/devops-shell-framework/index.html
+        mode: '0644'
