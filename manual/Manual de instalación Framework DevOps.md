@@ -40,8 +40,8 @@ cd devops-shell-framework
 mkdir -p app scripts terraform ansible docker k8s .github/workflows 
 touch README.md .gitignore
 ```
-[!NOTE]
-Ejecutar los siguientes comandos a nivel de carpeta devops-shell-framework
+> [!NOTE]
+> Ejecutar los siguientes comandos a nivel de carpeta devops-shell-framework
 
 **2.2** - Crear script de instalación básica
 ```
@@ -70,8 +70,8 @@ rm -f minikube-linux-amd64
 echo "[OK] Herramientas instaladas. Cierra y abre sesion para usar Docker sin sudo." 
 EOF
 ```
-[!NOTE]
-Asegurarse que el adaptador de red de la VM se encuentre en NAT.
+>[!NOTE]
+>Asegurarse que el adaptador de red de la VM se encuentre en NAT.
 En VirtualBox Configuración > Red > Adaptador > Conectar a > NAT
 ```
 chmod +x scripts/install-tools.sh
@@ -210,7 +210,7 @@ git branch -M main
 git config --global credential.helper store
 git push -u origin main
 ```
-[!IMPORTANT]
+>[!IMPORTANT]
 Debes tener tu token de GitHub ya generado y almacenado.
 Éste token es la contraseña, no la que se configuró para la cuenta
 
@@ -471,7 +471,7 @@ git log --oneline --graph --all
 ```
 ---
 
-[!CAUTION]
+>[!CAUTION]
 Los siguientes comandos eliminan cluster y contenedores al igual que imagen de contenedor
 ### Comandos de limpieza
 **Eliminar cluster K8s**
